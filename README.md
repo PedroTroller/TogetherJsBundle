@@ -1,5 +1,6 @@
 TogetherJsBundle
 ================
+Symfony integration of the awesome [TogetherJS](https://togetherjs.com/) from Mozilla.
 #Installation
 =============
 ```bash

@@ -1,0 +1,5 @@
+services:
+    pedrotroller.together_js.datacollector.together_js_data_collector:
+        class: PedroTroller\TogetherJs\DataCollector\TogetherJsDataCollector
+        tags:
+            - { name: data_collector, template: 'PedroTrollerTogetherJsBundle::display.html.twig', id: tohetherjs }

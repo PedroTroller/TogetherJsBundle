@@ -1,0 +1,22 @@
+{
+    "name": "pedrotroller/together-js-bundle",
+    "description": "A TogetherJs integration via the debug toolbar",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PedroTroler",
+            "email": "plazanet.pierre@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4",
+        "symfony/symfony": "~2.4"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0"
+    },
+    "autoload": {
+        "psr-0": { "PedroTroller\\TogetherJs": "src/" }
+    }
+}

@@ -10,7 +10,7 @@ class TogetherJsDataCollector implements DataCollectorInterface
 {
     public function collect(Request $request, Response $response, \Exception $exception = null)
     {
-
+        return [];
     }
 
     public function getName()

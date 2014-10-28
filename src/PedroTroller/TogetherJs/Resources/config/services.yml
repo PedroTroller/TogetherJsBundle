@@ -1,11 +1,17 @@
+parameters:
+    pedrotroller.together_js.configuration: []
+
 services:
     pedrotroller.together_js.datacollector.together_js_data_collector:
         class: PedroTroller\TogetherJs\DataCollector\TogetherJsDataCollector
         tags:
-            - { name: data_collector, template: 'PedroTrollerTogetherJsBundle::display.html.twig', id: togetherjs }
+            - { name: data_collector, template: 'PedroTrollerTogetherJsBundle::wdt.html.twig', id: togetherjs }
 
     pedrotroller.together_js.event_listener.add_script_listener:
         class: PedroTroller\TogetherJs\EventListener\AddScriptListener
+        arguments:
+            - @templating
+            - %pedrotroller.together_js.configuration%
         tags:
             - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
 

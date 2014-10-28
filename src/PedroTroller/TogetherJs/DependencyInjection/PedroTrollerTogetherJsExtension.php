@@ -2,6 +2,7 @@
 
 namespace PedroTroller\TogetherJs\DependencyInjection;
 
+use PedroTroller\TogetherJs\DependencyInjection\Configuration;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -11,7 +12,12 @@ class PedroTrollerTogetherJsExtension extends Extension
 {
     public function load(array $config, ContainerBuilder $container)
     {
+        $configuration = new Configuration;
+        $config = $this->processConfiguration($configuration, $config);
+
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $container->setParameter('pedrotroller.together_js.configuration', $config);
     }
 }
